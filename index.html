@@ -25,7 +25,7 @@
   <body>
     <main>
       <div class="container">
-        <div class="row align-items-start">
+        <div class="row">
           <div class="col">
             <div clas="info-container">
               <h1 class="header">Learn to code by watching others</h1>
@@ -55,7 +55,7 @@
                     id="first-name"
                     aria-describedby="emailHelp"
                   />
-                  <div class="error-name"></div>
+                  <div id="error-name"></div>
                 </div>
                 <div class="mb-3">
                   <input
@@ -65,6 +65,7 @@
                     id="last-name"
                     aria-describedby="emailHelp"
                   />
+                  <div id="error-last"></div>
                 </div>
                 <div class="mb-3">
                   <input
@@ -74,6 +75,7 @@
                     id="email"
                     aria-describedby="emailHelp"
                   />
+                  <div id="error-email"></div>
                 </div>
                 <div class="mb-3">
                   <input
@@ -82,8 +84,9 @@
                     class="form-control"
                     id="password"
                   />
+                  <div id="error-pass"></div>
                 </div>
-                <button type="submit" onClick class="btn btn-success">
+                <button type="submit" onClick class="btn submit-btn">
                   Claim your free trial
                 </button>
                 <label>

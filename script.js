@@ -8,14 +8,19 @@ function handleFormSubmission(event) {
   var email = document.getElementById('email').value;
   var password = document.getElementById('password').value;
 
-
-
-
+  const nameError = document.getElementById('error-name');
+  const lastError = document.getElementById('error-last');
+  const passError = document.getElementById('error-pass');
+  const emailError = document.getElementById('error-email');
 
   // Perform form validation
   if (firstname === '' || email === '' || lastname === '' || password === '') {
+    nameError.textContent = 'First name cannot be empty.';
+    lastError.textContent = 'Last name cannot be empty.'; 
+    passError.textContent = 'Password cannot be empty';
+    emailError.textContent = 'Look like this is not an email.';
 
-    alert('Please fill in all fields');
+   // alert('Please fill in all fields');
     return;
   }
 
