@@ -1,34 +1,37 @@
-console.log('Hello!');
 function handleFormSubmission(event) {
-  event.preventDefault(); // Prevent the default form submission
+  event.preventDefault();
 
-  // Access form fields
-  var firstname = document.getElementById('first-name').value;
-  var lastname = document.getElementById('last-name').value;
-  var email = document.getElementById('email').value;
-  var password = document.getElementById('password').value;
+  const inputs = ['first-name', 'last-name', 'email', 'password'];
+  const errorMessages = ['First name cannot be empty.', 'Last name cannot be empty.', 'Email cannot be empty.', 'Password cannot be empty.'];
+  
+  for (let i = 0; i < inputs.length; i++) {
+    const value = document.getElementById(inputs[i]).value;
+    const errorMessage = document.getElementById('error-' + inputs[i]);
+    if (value === '') {
+      errorMessage.textContent = errorMessages[i];
+      document.getElementById(inputs[i]).style.borderColor = 'red';
 
-  const nameError = document.getElementById('error-name');
-  const lastError = document.getElementById('error-last');
-  const passError = document.getElementById('error-pass');
-  const emailError = document.getElementById('error-email');
+      return;
+    }
 
-  // Perform form validation
-  if (firstname === '' || email === '' || lastname === '' || password === '') {
-    nameError.textContent = 'First name cannot be empty.';
-    lastError.textContent = 'Last name cannot be empty.'; 
-    passError.textContent = 'Password cannot be empty';
-    emailError.textContent = 'Look like this is not an email.';
+    errorMessage.textContent = '';
+  }
+  alert('Form submitted successfully!');
+  document.getElementById('myForm').reset();
 
-   // alert('Please fill in all fields');
-    return;
+}
+
+const inputField = document.getElementById('first-name');
+
+const clearErrorMessage = () => {
+  const showError = (inputId, errorId) => {
+    const inputField = document.getElementById(inputId);
+    const errorMessage = document.getElementById(errorId);
+    inputField.style.borderColor = '';
+    errorMessage.style.display = inputField.value ? 'none' : '';
   }
 
-  // Process the form data (you can replace this with your own logic)
-  // For example, you can send the data to a server using AJAX or fetch
-
-  alert('Form submitted successfully!');
-
-  // Reset the form after submission
-  document.getElementById('myForm').reset();
-}
+  showError('first-name', 'error-first-name');
+  showError('last-name', 'error-last-name');
+  showError('password', 'error-password');
+};
