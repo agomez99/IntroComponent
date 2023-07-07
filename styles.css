@@ -124,11 +124,42 @@ input:invalid {
   background-repeat: no-repeat;
   visibility: hidden;
 }
-
+.error-icon2 {
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height:30px;
+  background-image: url('./images/icon-error.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  visibility: hidden;
+}
+ .error-icon3 {
+  position: absolute;
+  top: 25%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 30px;
+  height:30px;
+  background-image: url('./images/icon-error.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  visibility: hidden;
+}
 .error {
   border: 1px solid red;
 }
 
-.error .error-icon {
+.error .error-icon  {
   visibility: visible;
 }
+
+ .error .error-icon2 {
+  visibility: visible;
+}
+.error .error-icon3 {
+  visibility: visible;
+}
+
