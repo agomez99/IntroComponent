@@ -59,13 +59,18 @@ function validateForm() {
   }
 
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  if (formInputs.email.value === '' || !formInputs.email.value.match(mailformat)) {
+  if (formInputs.email.value === '' || !formInputs.email.value.match(mailformat) || formInputs.password.value.length < 8) {
     setError(formInputs.email, 'Looks like this is not an email');
     isValid = false;
   } 
 
-  if (formInputs.password.value === '' || formInputs.password.value.length < 8) {
-    setError(formInputs.password, 'Password must be at least 8 characters long');
+
+  if (formInputs.password.value.length < 8) {
+    setError(formInputs.password, 'Password must be at least 8 characters');
+    isValid = false;
+  }
+  if (formInputs.password.value === '' ) {
+    setError(formInputs.password, 'Password cannot be emtpy');
     isValid = false;
   }
 
