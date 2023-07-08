@@ -20,8 +20,6 @@ body {
   height: 100vh;
 }
 
-.signup-container {
-}
 .info {
   margin-top: 33%;
 }
@@ -87,23 +85,6 @@ h1 {
   font-weight: bold;
   color: #f51313;
 }
-#error-first-name {
-  color: red;
-  margin-left: 55%;
-}
-#error-last-name {
-  color: red;
-  margin-left: 55%;
-}
-#error-email {
-  color: red;
-  margin-left: 55%;
-}
-
-#error-password {
-  color: red;
-  margin-left: 55%;
-}
 
 input:invalid {
   border-color: #f51313;
@@ -112,54 +93,24 @@ input:invalid {
 .input-container {
   position: relative;
 }
+
 .error-icon {
+  display: none;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+#firstNameIcon, #lastNameIcon, #emailIcon, #passwordIcon {
   position: absolute;
   top: 25%;
   right: 10px;
   transform: translateY(-50%);
   width: 30px;
   height:30px;
-  background-image: url('./images/icon-error.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  visibility: hidden;
-}
-.error-icon2 {
-  position: absolute;
-  top: 25%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 30px;
-  height:30px;
-  background-image: url('./images/icon-error.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  visibility: hidden;
-}
- .error-icon3 {
-  position: absolute;
-  top: 25%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 30px;
-  height:30px;
-  background-image: url('./images/icon-error.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  visibility: hidden;
-}
-.error {
-  border: 1px solid red;
 }
 
-.error .error-icon  {
-  visibility: visible;
-}
+#firstNameError, #lastNameError, #emailError, #passwordError {
+  color: red;
+  margin-left:60%;
 
- .error .error-icon2 {
-  visibility: visible;
 }
-.error .error-icon3 {
-  visibility: visible;
-}
-

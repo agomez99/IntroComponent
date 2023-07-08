@@ -42,40 +42,38 @@
               <form
                 class="form"
                 id="myForm"
-                onsubmit="handleFormSubmission(event)"
+                onsubmit="return validateForm()"
+                return true
               >
                 <div class="mb-3 input-container">
                   <input
                     type="text"
                     placeholder="First Name"
                     class="form-control"
-                    id="first-name"
-                    oninput="clearErrorMessage()"
+                    id="firstName"
                   />
-                  <span class="error-icon"></span>
-                  <span id="error-first-name"></span>
+                  <img id="firstNameIcon" src="./images/icon-error.svg" class="error-icon"><br>
+                  <span id="firstNameError"></span>
                 </div>
                 <div class="mb-3 input-container">
                   <input
                     type="text"
                     placeholder="Last Name"
                     class="form-control"
-                    id="last-name"
-                    oninput="clearErrorMessage()"
+                    id="lastName"
                   />
-                  <span class="error-icon2"></span>
-                  <div id="error-last-name"></div>
+                  <img id="lastNameIcon"src="./images/icon-error.svg" class="error-icon"><br>
+                  <span id="lastNameError"></span>
                 </div>
                 <div class="mb-3 input-container">
                   <input
-                    type="email"
+                    type="text"
                     class="form-control"
                     placeholder="Email Address"
                     id="email"
-                    oninput="clearErrorMessage()"
                   />
-                  <span class="error-icon3"></span>
-                  <div id="error-email"></div>
+                  <img id="emailIcon" src="./images/icon-error.svg" class="error-icon"><br>
+                  <span id="emailError"></span>
                 </div>
                 <div class="mb-3 input-container">
                   <input
@@ -83,10 +81,9 @@
                     placeholder="Password"
                     class="form-control"
                     id="password"
-                    oninput="clearErrorMessage()"
                   />
-                  <span class="error-icon"></span>
-                  <div id="error-password"></div>
+                  <img id="passwordIcon" src="./images/icon-error.svg" class="error-icon"><br>
+                  <span id="passwordError"></span>
                 </div>
                 <button type="submit" class="btn submit-btn">
                   Claim your free trial
